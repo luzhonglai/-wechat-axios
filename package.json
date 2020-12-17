@@ -1,0 +1,9 @@
+{
+  "name": "wetcht-app",
+  "version": "1.0.0",
+  "description": "改造小程序requst请求，集成一套axios类似功能的插件",
+  "main": "src/index.js",
+  "repository": "https://github.com/luzhonglai/-wechat-axios",
+  "author": "zhonglai lu",
+  "license": "ISC"
+}
