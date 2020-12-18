@@ -4,7 +4,7 @@
  * @Author: ZhongLai Lu
  * @Date: 2020-12-17 11:00:32
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-12-18 01:13:49
+ * @LastEditTime: 2020-12-18 10:18:34
  */
 
 /**
@@ -53,11 +53,12 @@ export function promiseAll(wx = { ...my }, zdy = {}) {
       if (hasCallback(args)) {
         zdy = fn(args)
       } else {
-        return _promiseify(fn)(args)
+        return promiseify(fn)(args)
       }
     } else {
       zdy[key] = fn
     }
   })
+  return zdy
 }
 
