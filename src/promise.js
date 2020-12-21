@@ -4,23 +4,25 @@
  * @Author: ZhongLai Lu
  * @Date: 2020-12-17 11:00:32
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-12-18 10:18:34
+ * @LastEditTime: 2020-12-21 11:00:48
  */
 
 /**
  * @name: promiseify
  * @msg: 处理普通函数转Rromise形式
  * @param {fun} 传入小程序Api函数
- * @return {*} 返回Rromise回调
+ * @return {*} 返回Rromise实例
  */
 export function promiseify(fun) {
   if (typeof fun !== 'function') return fun
   return (args = {}) => {
-    new Promise(resolve, (reject) => {
-      Object.assign(args, {
-        success: resolve,
-        fail: reject,
-      })
+    new Promise((resolve, reject) => {
+      fun(
+        Object.assign(args, {
+          success: resolve,
+          fail: reject,
+        })
+      )
     })
   }
 }
@@ -50,10 +52,12 @@ export function promiseAll(wx = { ...my }, zdy = {}) {
   Object.keys(wx).forEach((key) => {
     let fn = wx[key]
     if (typeof fn === 'function') {
-      if (hasCallback(args)) {
-        zdy = fn(args)
-      } else {
-        return promiseify(fn)(args)
+      zdy[key] = (args) => {
+        if (hasCallback(args)) {
+          fn(args)
+        } else {
+          return promiseify(fn)(args)
+        }
       }
     } else {
       zdy[key] = fn
@@ -61,4 +65,3 @@ export function promiseAll(wx = { ...my }, zdy = {}) {
   })
   return zdy
 }
-
