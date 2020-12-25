@@ -4,7 +4,7 @@
  * @Author: ZhongLai Lu
  * @Date: 2020-12-17 10:11:56
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-12-22 23:36:35
+ * @LastEditTime: 2020-12-23 11:22:14
 -->
 
 # -wechat-api-promise
@@ -31,12 +31,15 @@ npm install wechat-api-promise
   import { promiseify, promiseAll } form 'wechat-api-promise'
   
   App({
+    // 扩展Api-Promise
+    wxApi: promiseAll(wx, {}),
     onLaunch: function () {
+      // 拷贝一份api
       let wxApi = promiseAll(wx, {})
       // 单一使用
       promiseify(wx.showModal)().then(console.log(1))
-      // 拷贝一份api
-      wxApi.showModal().then(console.log(2)).catch(err=> wx.showToast())
+
+      wxApi.showModal().then(console.log(2)).catch(err=> wxApi.showToast())
     }
   })
 ```

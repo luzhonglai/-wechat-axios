@@ -1,6 +1,6 @@
 {
   "name": "wechat-api-promise",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "description": "基于Promise的小程序Api，并支持微信和支付宝小程序，使用支持Promise，轻便，小巧，使用方便高效",
   "main": "src/index.js",
   "repository": "https://github.com/luzhonglai/wechat-api-promise",

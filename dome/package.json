@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "wechat-api-promise": "^1.0.2",
     "wetcht-axios-sdk": "^1.0.5"
   }
 }

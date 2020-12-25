@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+wechat-api-promise@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/wechat-api-promise/-/wechat-api-promise-1.0.2.tgz#a8439103c5d380b551b65e119cfad439b37b4666"
+  integrity sha512-/i3OoNGwucRIgX3i41tfnAadprZ4lu5+dzOdqFH1jOiN2y+XX0PBO0Yr/YTeRMm8mX/G9XZKpOhMk6AhLWJ1Lw==
+
 wetcht-axios-sdk@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/wetcht-axios-sdk/-/wetcht-axios-sdk-1.0.5.tgz#0071aafc7970f77884cbab3fbe0902d02b3131c7"
