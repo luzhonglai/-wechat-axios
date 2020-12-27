@@ -25,7 +25,7 @@ yarn add wechat-api-promise
 npm install wechat-api-promise
 ```
 
-## 使用 dome
+## 使用 demo
 
 ```js
   import { promiseify, promiseAll } form 'wechat-api-promise'
